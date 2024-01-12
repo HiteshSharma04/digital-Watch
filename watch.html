@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=/, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="a"></h1>
+</body>
+<style>
+    h1{
+        font-size: 200px;
+        text-align: center;
+        color: aliceblue;
+        text-shadow: 10px 10px 20px grey;
+        
+    }
+    body{
+        background-color: black;
+    }
+</style>
+<script>
+    let h = document.getElementById("a")
+    let date = new Date();
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
+    let seconds = date.getSeconds()
+    let session = "AM"
+    function a(){
+        if (hour < 10){
+            hour = "0" + hour
+        }
+        if (minutes < 10){
+            minutes = "0" + minutes
+        }
+        if (seconds < 10){
+            seconds = "0" + seconds
+        }
+        if (hour>=12){
+            session = "PM"
+         }
+        if (hour > 12){
+            hour = hour - 12
+        }
+        
+        h.innerHTML =  hour + ":" + minutes + ":" + seconds + " " + session
+        setTimeout(function(){location.reload()},1000);
+    }
+    a();
+
+</script>
+</html>
